@@ -1,0 +1,109 @@
+.divPhone{
+    height: 100%;
+    overflow: auto;
+}
+
+.divPhone {
+    background-size: cover;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.divPhone::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+
+
+#imageLogo {
+  /* width: 300px; */
+  /* margin: 25px auto 5px auto; */
+  max-width: 85% !important;
+}
+
+#imageLogo img{
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+#imagePerfil {
+  width: 140px;
+  padding-top: 10px !important;
+}
+
+#imagePerfil img{
+  width: 90px;
+  height: 90px;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#nomePerfil{
+  text-align: center;
+  font-size: 19px;
+  color: black;
+  font-family: 'Fredoka One', cursive;
+}
+
+#descricao{
+  text-align: center;
+  font-size: 14px;
+  color: black;
+}
+
+.link{
+  margin-bottom: 15px;
+  max-width: 700px;
+  text-align: center;
+  align-content: center;
+  color: black;
+  background-color: white;
+  border-radius: 100px;
+  /* height: 50px; */
+}
+
+.link a{
+    text-decoration: none;
+}
+.link:hover{
+  background-color: white;
+  color: black;
+}
+
+.link:hover .clickLink{
+  color: black;
+}
+
+.clickLink{
+  margin: auto;
+  width: 100%;
+  color:black;
+  font-size: 10px;
+}
+
+.teste{
+  width: 49%;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.button-small{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.roow{
+  max-width: 700px;
+  margin-right: -4px !important;
+  margin-left: -4px !important;
+}
+
+
