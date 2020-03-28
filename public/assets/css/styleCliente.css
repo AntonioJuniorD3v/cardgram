@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
 body{
   /* background-color: #7259c1 !important; */
   /* background-image: url(https://i.pinimg.com/originals/01/d2/f6/01d2f6d3cdb312ecac38db2443afcef0.jpg); */
@@ -7,7 +9,7 @@ body{
 
 #imageLogo {
   width: 300px;
-  margin: 10px auto 0px auto;
+  margin: 15px auto 0px auto;
 }
 
 #imageLogo img{
@@ -22,7 +24,7 @@ body{
 
 #imagePerfil {
   /* /width: 150px; */
-  /* margin: 25px auto 5px auto; */
+  /* margin: 25px auto 5px auto !important; */
 }
 
 #imagePerfil img{
@@ -34,19 +36,20 @@ body{
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 15px;
 }
 
 #nomePerfil{
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   /* color: black; */
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Roboto', sans-serif;
   /* font-family: 'Fredoka One', cursive; */
 }
 
 #descricao{
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   margin-top: -8px;
   /* color: black; */
 }
@@ -136,3 +139,6 @@ body{
     width: 100%!important;
     height: 100%!important;
     }
+
+
+

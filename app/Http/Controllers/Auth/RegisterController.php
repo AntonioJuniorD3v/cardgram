@@ -86,8 +86,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $cleanVar = $data['name'];
+        $cleanVar = strtolower(strtr(utf8_decode($cleanVar), utf8_decode('àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ '), 'aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY-'));
+
         return User::create([
             'name' => $data['name'],
+            'username' => $cleanVar,
+            'expiration_date' =>  date('Y-m-d', strtotime('+7 days')),
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);

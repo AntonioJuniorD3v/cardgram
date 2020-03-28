@@ -134,8 +134,15 @@
       <div class=" navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
         <!-- Navbar Toolbar -->
         <ul class="nav navbar-toolbar">
-          <li class="nav-item dropdown dropdown-fw dropdown-mega">
-            <a class="nav-link"  href="{{url('admin')}}" role="button">LOGO</a>
+          <li class="nav-item dropdown dropdown-fw dropdown-mega ml-10">
+            <div class="row" >
+                <div style="align-self: center;">
+                    <img src="../../assets/appco/img/logo.png" width="35">
+                </div>
+                <div>
+                    <a class="navbar-brand logo" href="{{url('admin')}}">Cardgram</a>
+                </div>
+            </div>
           </li>
         </ul>
         <!-- End Navbar Toolbar -->

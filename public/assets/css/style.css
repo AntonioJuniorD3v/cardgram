@@ -602,6 +602,13 @@ div.content2 {
 }
 
 
+.imgDiv div {
+    height: 200px;
+    width: 110px;
+    border-radius: 15px;
+    border: 6px solid black;
+}
+
 @media only screen and (max-width: 700px) {
     section {
         flex-direction: column;
@@ -812,6 +819,13 @@ section.pricing .card {
     padding: 1rem;
     opacity: 0.7;
     transition: all 0.2s;
+}
+
+.logo{
+    font-family: 'Fredoka One', cursive;
+    /* font-family: 'Oleo Script Swash Caps', cursive; */
+    font-size: 25px;
+    color: #6730e3;
 }
 
 /* Hover Effects on Card */

@@ -18,7 +18,6 @@
             .divPhone{
                 background-color: {{$user->color_background}} !important;
                 background-image: {{$user->color_background}} !important;
-
             }
         @else
             @php

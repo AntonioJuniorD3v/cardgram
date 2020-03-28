@@ -2,7 +2,7 @@
 $('form[name="addFormLink"]').submit(function(event){
     event.preventDefault();
     var formData = new FormData(this);
-    console.log(formData);
+    alert('teste');
 
 	$("#overlay").fadeIn(300);
 

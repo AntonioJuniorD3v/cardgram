@@ -19,7 +19,7 @@
                         Meu cartão:
                     </div> --}}
                     <div>
-                        <u><a href="http://127.0.0.1:8000/{{$user->name}}" target="_blank" id="urlLink"> http://127.0.0.1:8000/{{$user->name}}</a></u>
+                        <u><a href="http://127.0.0.1:8000/{{$user->username}}" target="_blank" id="urlLink"> http://127.0.0.1:8000/{{$user->username}}</a></u>
                         <button type="button" id="btnCopy" class="btn btn-round btn-sm waves-effect waves-light waves-round colorSite">
                             <i class="far fa-copy fa-2x"></i>
                         </button>
@@ -688,6 +688,8 @@
                                         <option @if ($user->background_type == '#mulheres') selected @endif value="#mulheres"  >Mulheres</option>
                                         <option @if ($user->background_type == '#minimalist') selected @endif value="#minimalist">Minimalista</option>
                                         <option @if ($user->background_type == '#music') selected @endif value="#music">Música</option>
+                                        <option @if ($user->background_type == '#gradient') selected @endif value="#gradient">Gradientes</option>
+
 
                                     </optgroup>
                                     <option @if ($user->background_type == '#imagem') selected @endif value="#imagem">Enviar uma imagem</option>
@@ -1001,6 +1003,180 @@
                                                 <label for="g005">
                                                     <div class="imgDiv" for="g005">
                                                         <img src={{url("media/backgrounds_gallery/music/005.jpeg")}}>
+                                                    </div>
+                                                </label>
+                                            </div>
+
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="content2" id="gradient">
+                                <div class="media col-md-12 mx-auto pl-50 divGallery">
+                                    <div class="example-wrap">
+                                        <section id="sectionGaleria">
+
+                                            <div class="divGaleria">
+                                                <input type="radio" @if ($user->img_background == 'g001') checked @endif id="g001" class="selectBackground" name="select" data-type='2' value="g001" >
+                                                <label for="g001">
+                                                    <div class="imgDiv" for="g001">
+                                                       <div
+                                                        class="gradient"
+                                                        style="background: linear-gradient(180deg, #00C9FF 0%, #92FE9D 100%);"
+                                                        >
+                                                       </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+
+                                            <div class="divGaleria">
+                                                <input type="radio" @if ($user->img_background == 'g001') checked @endif id="g001" class="selectBackground" name="select" data-type='2' value="g001" >
+                                                <label for="g001">
+                                                    <div class="imgDiv" for="g001">
+                                                       <div
+                                                        class="gradient"
+                                                        style="background: linear-gradient(180deg, #FC466B 0%, #3F5EFB 100%);"
+                                                        >
+                                                       </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+
+                                            <div class="divGaleria">
+                                                <input type="radio" @if ($user->img_background == 'g001') checked @endif id="g001" class="selectBackground" name="select" data-type='2' value="g001" >
+                                                <label for="g001">
+                                                    <div class="imgDiv" for="g001">
+                                                       <div
+                                                        class="gradient"
+                                                        style="background: linear-gradient(180deg, #3F2B96 0%, #A8C0FF 100%);"
+                                                        >
+                                                       </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+
+                                            <div class="divGaleria">
+                                                <input type="radio" @if ($user->img_background == 'g001') checked @endif id="g001" class="selectBackground" name="select" data-type='2' value="g001" >
+                                                <label for="g001">
+                                                    <div class="imgDiv" for="g001">
+                                                       <div
+                                                        class="gradient"
+                                                        style="background: linear-gradient(180deg, #f8ff00 0%, #3ad59f 100%);"
+                                                        >
+                                                       </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+
+
+
+                                            <div class="divGaleria">
+                                                <input type="radio" @if ($user->img_background == 'g001') checked @endif id="g001" class="selectBackground" name="select" data-type='2' value="g001" >
+                                                <label for="g001">
+                                                    <div class="imgDiv" for="g001">
+                                                       <div
+                                                        class="gradient"
+                                                        style="background-image: linear-gradient( 135deg, #FDEB71 10%, #F8D800 100%);"
+                                                        >
+                                                       </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+
+
+                                            <div class="divGaleria">
+                                                <input type="radio" @if ($user->img_background == 'g001') checked @endif id="g001" class="selectBackground" name="select" data-type='2' value="g001" >
+                                                <label for="g001">
+                                                    <div class="imgDiv" for="g001">
+                                                       <div
+                                                        class="gradient"
+                                                        style="background-color: #FF9A8B;
+                                                        background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+                                                        "
+                                                        >
+                                                       </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+
+
+                                            <div class="divGaleria">
+                                                <input type="radio" @if ($user->img_background == 'g001') checked @endif id="g001" class="selectBackground" name="select" data-type='2' value="g001" >
+                                                <label for="g001">
+                                                    <div class="imgDiv" for="g001">
+                                                       <div
+                                                        class="gradient"
+                                                        style="background-image: linear-gradient( 69.7deg,  rgba(216,81,82,1) 40%, rgba(154,27,69,1) 100.1% );"
+                                                        >
+                                                       </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+
+                                            <div class="divGaleria">
+                                                <input type="radio" @if ($user->img_background == 'g001') checked @endif id="g001" class="selectBackground" name="select" data-type='2' value="g001" >
+                                                <label for="g001">
+                                                    <div class="imgDiv" for="g001">
+                                                       <div
+                                                        class="gradient"
+                                                        style="background-image: radial-gradient( circle farthest-corner at 50.1% 52.3%,  rgba(255,231,98,1) 58.2%, rgba(251,212,0,1) 90.1% );"
+                                                        >
+                                                       </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+
+                                            <div class="divGaleria">
+                                                <input type="radio" @if ($user->img_background == 'g001') checked @endif id="g001" class="selectBackground" name="select" data-type='2' value="g001" >
+                                                <label for="g001">
+                                                    <div class="imgDiv" for="g001">
+                                                       <div
+                                                        class="gradient"
+                                                        style="background-image: linear-gradient( 171.8deg,  rgba(5,111,146,1) 13.5%, rgba(6,57,84,1) 78.6% );"
+                                                        >
+                                                       </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+
+                                            <div class="divGaleria">
+                                                <input type="radio" @if ($user->img_background == 'g001') checked @endif id="g001" class="selectBackground" name="select" data-type='2' value="g001" >
+                                                <label for="g001">
+                                                    <div class="imgDiv" for="g001">
+                                                       <div
+                                                        class="gradient"
+                                                        style="background-image: radial-gradient( circle 753.6px at 10% 20%,  rgba(248,167,221,1) 0%, rgba(230,192,254,1) 41%, rgba(169,217,243,1) 90% );"
+                                                        >
+                                                       </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+
+                                            <div class="divGaleria">
+                                                <input type="radio" @if ($user->img_background == 'g001') checked @endif id="g001" class="selectBackground" name="select" data-type='2' value="g001" >
+                                                <label for="g001">
+                                                    <div class="imgDiv" for="g001">
+                                                       <div
+                                                        class="gradient"
+                                                        style="background-image: radial-gradient( circle farthest-corner at 0.1% 53.8%,  rgba(255,182,172,1) 0%, rgba(255,123,172,1) 100.2% );
+                                                        "
+                                                        >
+                                                       </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+
+                                            <div class="divGaleria">
+                                                <input type="radio" @if ($user->img_background == 'g001') checked @endif id="g001" class="selectBackground" name="select" data-type='2' value="g001" >
+                                                <label for="g001">
+                                                    <div class="imgDiv" for="g001">
+                                                       <div
+                                                        class="gradient"
+                                                        style="background-image: radial-gradient( circle farthest-corner at 0.2% 1.8%,  rgba(255,90,8,1) 0%, rgba(88,0,0,1) 100.2% );"
+                                                        >
+                                                       </div>
                                                     </div>
                                                 </label>
                                             </div>

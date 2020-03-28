@@ -5,7 +5,7 @@
 <!--header section start-->
 <header class="header">
     <!--start navbar-->
-    <nav class="navbar navbar-expand-lg fixed-top custom-nav white-bg">
+    <nav class="navbar navbar-expand-lg fixed-top bg-transparent affix">
         <div class="container">
             <img src="../../assets/appco/img/logo.png" alt="icon image" style="margin: 7px 5px 0 0;" class="img-fluid" width="35">
 
@@ -18,16 +18,22 @@
             <div class="collapse navbar-collapse main-menu" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#about">Inicio</a>
+                        <a class="nav-link page-scroll" href="#home">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#features">Preços</a>
+                        <a class="nav-link page-scroll" href="#about">Vantagens</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#screenshots">Exemplos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#pricing">Preços</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="{{$BASE_URL}}login">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" id="register" class="" target="_blank">Registre-se Grátis!</a>
+                        <a href="{{$BASE_URL}}register" id="register" class="" target="_blank">Registre-se Grátis!</a>
                     </li>
 
                 </ul>
@@ -39,7 +45,7 @@
 <!--header section end-->
 
     <!--body content wrap start-->
-    <div class="main">
+    <div class="main" id="home">
 
         <section class="hero-section pt-100 background-img" style="background: url('img/app-hero-bg.jpg')no-repeat center center / cover">
             <div class="circles">
@@ -76,10 +82,8 @@
                         <div class="hero-animation-img">
                             <img class="img-fluid d-block m-auto animation-one" src="https://www.cartaointerativo.com.br/img/big_thumb_home.png"
                                 width="150" alt="animation image" id="imgTop">
-                            <img class="img-fluid d-none d-lg-block animation-two"
-                                src="../../assets/appco/img/instagramlike.png" style="bottom:100px !important;" alt="animation image" width="120">
-                            <img class="img-fluid d-none d-lg-block animation-three"
-                                src="../../assets/appco/img/face.png" alt="animation image" width="120">
+                            {{-- <img class="img-fluid d-none d-lg-block animation-two"
+                                src="../../assets/appco/img/instagramlike.png" style="bottom:100px !important;" alt="animation image" width="120"> --}}
                             <img class="img-fluid d-none d-lg-block animation-four" style="margin: -40px 0 0 -40px;" src="https://socialboost.uk/wp-content/uploads/2019/01/girl_right.png"
                                 alt="animation image" width="200">
                         </div>
@@ -91,73 +95,26 @@
             </div>
         </section>
 
-        <!--promo section start-->
-        <section class="promo-section ptb-100">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-7 col-md-8">
-                        <div class="section-heading text-center mb-5">
-                            <h2>Porque você precisa de um Cartão Interativo?<br><span></span></h2>
-                            <p class="lead">
-                                Following reasons show advantages of adding AppCo to your lead pages, demos and
-                                checkouts
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row equal">
-                    <div class="col-md-4 col-lg-4">
-                        <div class="single-promo single-promo-hover single-promo-1 rounded text-center white-bg p-5 h-100">
-                            <div class="circle-icon mb-5">
-                                <span class="ti-eye text-white"></span>
-                            </div>
-                            <h5>Identidade Visual</h5>
-                            <p>Realize importance of social proof in customer’s purchase decision.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-lg-4">
-                        <div class="single-promo single-promo-hover single-promo-1 rounded text-center white-bg p-5 h-100">
-                            <div class="circle-icon mb-5">
-                                <span class="ti-vector text-white"></span>
-                            </div>
-                            <h5>Redes sociais</h5>
-                            <p>Insira todas suas redes sociais e informações de contato.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-lg-4">
-                        <div class="single-promo single-promo-hover single-promo-1 rounded text-center white-bg p-5 h-100">
-                            <div class="circle-icon mb-5">
-                                <span class="ti-lock text-white"></span>
-                            </div>
-                            <h5>Secure Data</h5>
-                            <p>Build your online store’s trust using Social Proof & Urgency.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--promo section end-->
-
         <!--overflow block start-->
-        <div class="overflow-hidden">
-            <div id="features" class="feature-section ptb-100 gray-light-bg">
+        <div class="overflow-hidden" id="about">
+            <div id="features" class="feature-section ptb-100 mt-200">
                 <div class="container">
 
-                    <div class="row justify-content-center">
+                    {{-- <div class="row justify-content-center">
                         <div class="col-md-8">
                             <div class="section-heading text-center mb-5">
-                                <h2>Quick &amp; Easy Process with <br>
-                                    <span>best features</span></h2>
-                                <p>Objectively deliver professional value with diverse web-readiness.
-                                    Collaboratively transition wireless customer service without goal-oriented catalysts for
-                                    change. Collaboratively.</p>
+                                <h2>
+                                    <span>Vantagens de ter um</span><br>
+                                    Cartão Interativo
+                                </h2>
+                                <p>Muitas pessoas estão deixando de usar os velhos cartões de visita impressos e agora estão entrando na tendencia Cartões de Visitas Digitais.</p>
 
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <!--feature new style start-->
-                    <div class="row row-grid align-items-center">
+                    <div class="row row-grid align-items-center" >
                         <div class="col-lg-4">
                             <div class="d-flex align-items-start mb-5">
                                 <div class="pr-4">
@@ -166,8 +123,8 @@
                                     </div>
                                 </div>
                                 <div class="icon-text">
-                                    <h5>Responsive web design</h5>
-                                    <p class="mb-0">Modular and interchangable componente between layouts and even demos.</p>
+                                    <h5>Interativo</h5>
+                                    <p class="mb-0">No cartão digital, tudo pode ser linkado, ou seja, seu cliente pode clicar em um botão e ser direcionado para a sua página do Facebook, seu site ou até mesmo para o seu whatsApp.</p>
                                 </div>
                             </div>
                             <div class="d-flex align-items-start mb-5">
@@ -177,8 +134,8 @@
                                     </div>
                                 </div>
                                 <div class="icon-text">
-                                    <h5>Loaded with features</h5>
-                                    <p class="mb-0">Modular and interchangable componente between layouts and even demos.</p>
+                                    <h5>100% editável</h5>
+                                    <p class="mb-0">Mudou de número? não tem problema, você pode editar as informações a qualquer momento.</p>
                                 </div>
                             </div>
                             <div class="d-flex align-items-start">
@@ -188,14 +145,15 @@
                                     </div>
                                 </div>
                                 <div class="icon-text">
-                                    <h5>Friendly online support</h5>
-                                    <p class="mb-0">Modular and interchangable componente between layouts and even demos.</p>
+                                    <h5>Do seu jeito</h5>
+                                    <p class="mb-0">Você cria o cartão do seu gosto, nossa ferramenta possibilita você editar 100% o seu cartão deixando-o com sua cara a cara do seu negócio.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="position-relative">
-                                <img alt="Image placeholder" src="../../assets/appco/img/iphone.png" class="img-center img-fluid">
+                                <img id="tree" alt="Image placeholder" src="../../assets/appco/img/tree.png" class="img-center img-fluid">
+                                <img alt="Image placeholder" src="https://www.cartaointerativo.com.br/img/big_thumb_home.png" class="img-center img-fluid">
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -206,9 +164,10 @@
                                     </div>
                                 </div>
                                 <div class="icon-text">
-                                    <h5>Free updates forever</h5>
-                                    <p class="mb-0">Modular and interchangable componente between layouts and even demos.</p>
+                                    <h5>Prático</h5>
+                                    <p class="mb-0">O cartão digital tem um link que permite você enviar facilmente para todos seus contatos por qualquer midia digitail: e-mail, listas de transmissão, whatsApp e redes sociais.</p>
                                 </div>
+
                             </div>
                             <div class="d-flex align-items-start mb-5">
                                 <div class="pr-4">
@@ -217,19 +176,19 @@
                                     </div>
                                 </div>
                                 <div class="icon-text">
-                                    <h5>Built with Sass</h5>
-                                    <p class="mb-0">Modular and interchangable componente between layouts and even demos.</p>
+                                    <h5>Monitore as visitas</h5>
+                                    <p class="mb-0">Nossa ferramente permite monitorar todo o tráfego do cartão saber quantas pessoas clicou em cada link.</p>
                                 </div>
                             </div>
                             <div class="d-flex align-items-start">
                                 <div class="pr-4">
                                     <div class="icon icon-shape icon-color-6 rounded-circle">
-                                        <span class="ti-palette"></span>
+                                        <span class="ti-world"></span>
                                     </div>
                                 </div>
                                 <div class="icon-text">
-                                    <h5>Infinite colors</h5>
-                                    <p class="mb-0">Modular and interchangable componente between layouts and even demos.</p>
+                                    <h5>Ecológico</h5>
+                                    <p class="mb-0">Não envolve impressão o cartão é 100% digital e fica online 24Hrs por dia.</p>
                                 </div>
                             </div>
                         </div>
@@ -241,13 +200,13 @@
         <!--overflow block end-->
 
         <!--screenshots section start-->
-        <section id="screenshots" class="screenshots-section ptb-100 gray-light-bg">
+        <section id="screenshots" class="screenshots-section ptb-100 primary-bg">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         <div class="section-heading text-center">
-                            <h2>App screenshots <br> <span>Looks awesome</span></h2>
-                            <p class="lead">Credibly synthesize multimedia based networks vis-a-vis top-line growth strategies. Continually leverage existing worldwide interfaces </p>
+                            <h2 class="text-white">Alguns clientes <br></h2>
+                            <p class="lead">Veja alguns exemplos de clientes que usam o Cardgram</p>
                         </div>
                     </div>
                 </div>
@@ -255,12 +214,12 @@
                 <div class="screen-slider-content mt-5">
                     <div class="screenshot-frame"></div>
                     <div class="screen-carousel owl-carousel owl-theme dot-indicator">
-                        <img src="../../assets/appco/img/01.png" class="img-fluid" alt="screenshots">
-                        <img src="../../assets/appco/img/02.png" class="img-fluid" alt="screenshots">
-                        <img src="../../assets/appco/img/03.png" class="img-fluid" alt="screenshots">
-                        <img src="../../assets/appco/img/04.png" class="img-fluid" alt="screenshots">
-                        <img src="../../assets/appco/img/05.png" class="img-fluid" alt="screenshots">
-                        <img src="../../assets/appco/img/06.png" class="img-fluid" alt="screenshots">
+                        <img src="../../assets/appco/img/teste.png" class="img-fluid" alt="screenshots">
+                        <img src="../../assets/appco/img/teste.png" class="img-fluid" alt="screenshots">
+                        <img src="../../assets/appco/img/teste.png" class="img-fluid" alt="screenshots">
+                        <img src="../../assets/appco/img/teste.png" class="img-fluid" alt="screenshots">
+                        <img src="../../assets/appco/img/teste.png" class="img-fluid" alt="screenshots">
+                        <img src="../../assets/appco/img/teste.png" class="img-fluid" alt="screenshots">
                     </div>
                 </div>
                 <!--end app screen carousel-->
@@ -274,19 +233,10 @@
                 <div class="row justify-content-between align-items-center">
                     <div class="col-md-6">
                         <div class="section-heading mb-5">
-                            <h2>Testimonials <br><span>what clients say</span></h2>
+                            <h2>Depoimentos <br><span>dos nossos clientes</span></h2>
                             <p class="lead">
-                                Rapidiously morph transparent internal or "organic" sources whereas resource sucking
-                                e-business. Conveniently innovate compelling internal.
+                                “Meu cartão de visita digital está fazendo o maior sucesso nos grupos de Whatsapp!” ou “Nossa, consegui muitos contatos e clientes potenciais em pouquíssimo tempo!”.
                             </p>
-
-                            <div class="client-section-wrap d-flex flex-row align-items-center">
-                                <ul class="list-inline">
-                                    <li class="list-inline-item"><img src="img/client-1-color.png" width="85" alt="client" class="img-fluid"></li>
-                                    <li class="list-inline-item"><img src="img/client-6-color.png" width="85" alt="client" class="img-fluid"></li>
-                                    <li class="list-inline-item"><img src="img/client-3-color.png" width="85" alt="client" class="img-fluid"></li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
                     <div class="col-md-5">
@@ -297,7 +247,7 @@
                                 <div class="testimonial-quote-wrap">
                                     <div class="media author-info mb-3">
                                         <div class="author-img mr-3">
-                                            <img src="img/client-1.jpg" alt="client" class="img-fluid rounded-circle">
+                                            <img src="https://appco.themetags.com/img/client-1.jpg" alt="client" class="img-fluid rounded-circle">
                                         </div>
                                         <div class="media-body">
                                             <h5 class="mb-0">John Charles</h5>
@@ -305,7 +255,7 @@
                                         </div>
                                     </div>
                                     <div class="client-say">
-                                        <p> <img src="img/quote.png" alt="quote" class="img-fluid"> Interactively optimize fully researched expertise vis-a-vis plug-and-play relationships. Intrinsicly develop viral core competencies for fully tested customer service. Enthusiastically create next-generation growth strategies and.</p>
+                                        <p> <img src="../../assets/appco/img/quote.png" alt="quote" class="img-fluid"> Interactively optimize fully researched expertise vis-a-vis plug-and-play relationships. Intrinsicly develop viral core competencies for fully tested customer service. Enthusiastically create next-generation growth strategies and.</p>
                                     </div>
                                 </div>
                             </div></div><div class="owl-item" style="width: 445px; margin-right: 30px;"><div class="item">
@@ -320,7 +270,7 @@
                                         </div>
                                     </div>
                                     <div class="client-say">
-                                        <p><img src="img/quote.png" alt="quote" class="img-fluid">  Rapidiously develop user friendly growth strategies after extensive initiatives. Conveniently grow innovative benefits through fully tested deliverables. Rapidiously utilize focused platforms through end-to-end schemas.</p>
+                                        <p><img src="../../assets/appco/img/quote.png" alt="quote" class="img-fluid">  Rapidiously develop user friendly growth strategies after extensive initiatives. Conveniently grow innovative benefits through fully tested deliverables. Rapidiously utilize focused platforms through end-to-end schemas.</p>
                                     </div>
                                 </div>
                             </div></div><div class="owl-item" style="width: 445px; margin-right: 30px;"><div class="item">
@@ -335,7 +285,7 @@
                                         </div>
                                     </div>
                                     <div class="client-say">
-                                        <p><img src="img/quote.png" alt="quote" class="img-fluid"> Objectively synthesize client-centered e-tailers for maintainable channels. Holisticly administrate customer directed vortals whereas tactical functionalities. Energistically monetize reliable imperatives through client-centric best practices. Collaboratively.</p>
+                                        <p><img src="../../assets/appco/img/quote.png" alt="quote" class="img-fluid"> Objectively synthesize client-centered e-tailers for maintainable channels. Holisticly administrate customer directed vortals whereas tactical functionalities. Energistically monetize reliable imperatives through client-centric best practices. Collaboratively.</p>
                                     </div>
                                 </div>
                             </div></div><div class="owl-item" style="width: 445px; margin-right: 30px;"><div class="item">
@@ -350,7 +300,7 @@
                                         </div>
                                     </div>
                                     <div class="client-say">
-                                        <p><img src="img/quote.png" alt="quote" class="img-fluid"> Enthusiastically innovate B2C data without clicks-and-mortar convergence. Monotonectally deliver compelling testing procedures vis-a-vis B2B testing procedures. Competently evisculate integrated resources whereas global processes. Enthusiastically.</p>
+                                        <p><img src="../../assets/appco/img/quote.png" alt="quote" class="img-fluid"> Enthusiastically innovate B2C data without clicks-and-mortar convergence. Monotonectally deliver compelling testing procedures vis-a-vis B2B testing procedures. Competently evisculate integrated resources whereas global processes. Enthusiastically.</p>
                                     </div>
                                 </div>
                             </div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev disabled"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div></div>
@@ -365,7 +315,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         <div class="section-heading text-center mb-5">
-                            <h2>Afforadble Pricing and Packages <br><span>choose your best one</span></h2>
+                            <h2>Escolha seu plano<br></h2>
                             <p class="lead">
                                 Monotonectally grow strategic process improvements vis-a-vis integrated resources.
                             </p>
@@ -375,79 +325,73 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-4 col-md">
                         <div class="card text-center single-pricing-pack">
-                            <div class="pt-4"><h5>Basic</h5></div>
-                            <div class="pricing-img mt-4">
-                                <img src="img/basic.svg" alt="pricing img" class="img-fluid">
-                            </div>
+                            <div class="pt-4"><h5>Trimestral</h5></div>
+
                             <div class="card-header py-4 border-0 pricing-header">
-                                <div class="h1 text-center mb-0">$<span class="price font-weight-bolder">29</span></div>
+                                <div class="h1 text-center mb-0">R$<span class="price font-weight-bolder">14,90</span><small style="font-size: 50%;">/mês</small></div>
+                                <div class=" text-center mb-0">Você paga R$44,70  a cada 3 meses</div>
                             </div>
                             <div class="card-body">
-                                <ul class="list-unstyled text-sm mb-4 pricing-feature-list">
-                                    <li>Push Notifications</li>
-                                    <li>Data Transfer</li>
-                                    <li>SQL Database</li>
-                                    <li>Search &amp; SEO Analytics</li>
-                                    <li>24/7 Phone Support</li>
-                                    <li>2 months technical support</li>
-                                    <li>2+ profitable keyword</li>
+                                <ul class="list-unstyled text-sm mb-4 pricing-feature-list text-left">
+                                    <li><i class="fas fa-check"></i> Botões ilimitados.</li>
+                                    <li><i class="fas fa-check"></i> Saiba quantas vezes cada botão foi clicado.</li>
+                                    <li><i class="fas fa-check"></i> Suporte prioritário.</li>
+                                    <li><i class="fas fa-check"></i> Personalização completa do seu cartão.</li>
+                                    <li><i class="fas fa-check"></i> Monitore o tráfego do seu cartão.</li>
+                                    <li><i class="fas fa-check"></i> Botões personalizados</li>
+                                    <li><i class="fas fa-check"></i> Adicione vídeo do youtube em seu cartão</li>
                                 </ul>
-                                <a href="#" class="btn outline-btn mb-3" target="_blank">Purchase now</a>
+                                <a href="#" class="btn outline-btn mb-3" target="_blank">Experimente Gratuitamente!</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md">
                         <div class="card popular-price text-center single-pricing-pack">
-                            <div class="pt-4"><h5>Standard</h5></div>
-                            <div class="pricing-img mt-4">
-                                <img src="img/standard.svg" alt="pricing img" class="img-fluid">
-                            </div>
-                            <div class="card-header py-4 border-0 pricing-header">
-                                <div class="h1 text-center mb-0">$<span class="price font-weight-bolder">149</span></div>
+                            <div class="pt-4"><h5>Semestral</h5></div>
 
+                            <div class="card-header py-4 border-0 pricing-header">
+                                <div class="h1 text-center mb-0">R$<span class="price font-weight-bolder">12,90</span><small style="font-size: 50%;">/mês</small></div>
+                                <div class=" text-center mb-0">Você paga R$77,40  a cada 6 meses</div>
                             </div>
                             <div class="card-body">
-                                <ul class="list-unstyled text-sm mb-4 pricing-feature-list">
-                                    <li>Push Notifications</li>
-                                    <li>Data Transfer</li>
-                                    <li>SQL Database</li>
-                                    <li>Search &amp; SEO Analytics</li>
-                                    <li>24/7 Phone Support</li>
-                                    <li>1 Year technical support</li>
-                                    <li>50+ profitable keyword</li>
+                                <ul class="list-unstyled text-sm mb-4 pricing-feature-list text-left">
+                                    <li><i class="fas fa-check"></i> Botões ilimitados.</li>
+                                    <li><i class="fas fa-check"></i> Saiba quantas vezes cada botão foi clicado.</li>
+                                    <li><i class="fas fa-check"></i> Suporte prioritário.</li>
+                                    <li><i class="fas fa-check"></i> Personalização completa do seu cartão.</li>
+                                    <li><i class="fas fa-check"></i> Monitore o tráfego do seu cartão.</li>
+                                    <li><i class="fas fa-check"></i> Botões personalizados</li>
+                                    <li><i class="fas fa-check"></i> Adicione vídeo do youtube em seu cartão</li>
                                 </ul>
-                                <a href="#" class="btn solid-btn mb-3" target="_blank">Purchase now</a>
+                                <a href="#" class="btn outline-btn mb-3" target="_blank">Experimentar Gratuitamente!</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md">
                         <div class="card text-center single-pricing-pack">
-                            <div class="pt-4"><h5>Unlimited</h5></div>
-                            <div class="pricing-img mt-4">
-                                <img src="img/unlimited.svg" alt="pricing img" class="img-fluid">
-                            </div>
+                            <div class="pt-4"><h5>Anual</h5></div>
+
                             <div class="card-header py-4 border-0 pricing-header">
-                                <div class="h1 text-center mb-0">$<span class="price font-weight-bolder">39</span></div>
+                                <div class="h1 text-center mb-0">R$<span class="price font-weight-bolder">11,90</span><small style="font-size: 50%;">/mês</small></div>
+                                <div class=" text-center mb-0">Você paga R$144,70  a cada 12 meses</div>
                             </div>
                             <div class="card-body">
-                                <ul class="list-unstyled text-sm mb-4 pricing-feature-list">
-                                    <li>Push Notifications</li>
-                                    <li>Data Transfer</li>
-                                    <li>SQL Database</li>
-                                    <li>Search &amp; SEO Analytics</li>
-                                    <li>24/7 Phone Support</li>
-                                    <li>6 months technical support</li>
-                                    <li>10+ profitable keyword</li>
+                                <ul class="list-unstyled text-sm mb-4 pricing-feature-list text-left">
+                                    <li><i class="fas fa-check"></i> Botões ilimitados.</li>
+                                    <li><i class="fas fa-check"></i> Saiba quantas vezes cada botão foi clicado.</li>
+                                    <li><i class="fas fa-check"></i> Suporte prioritário.</li>
+                                    <li><i class="fas fa-check"></i> Personalização completa do seu cartão.</li>
+                                    <li><i class="fas fa-check"></i> Monitore o tráfego do seu cartão.</li>
+                                    <li><i class="fas fa-check"></i> Botões personalizados</li>
+                                    <li><i class="fas fa-check"></i> Adicione vídeo do youtube em seu cartão</li>
                                 </ul>
-                                <a href="#" class="btn outline-btn mb-3" target="_blank">Purchase now</a>
+                                <a href="#" class="btn outline-btn mb-3" target="_blank">Experimentar Gratuitamente!</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="mt-5 text-center">
-                    <p class="mb-2">If you need custom services or Need more? <a href="#" class="color-secondary">
-                        Contact us
-                    </a></p>
+                    <span class="mb-2" style="font-size: 25px;">Pergutas frequentes</span>
                 </div>
                 <!--pricing faq start-->
                 <div class="row mt-5">
@@ -456,11 +400,11 @@
                             <!-- Accordion card 1 -->
                             <div class="card">
                                 <div class="card-header py-4" id="heading-1-1" data-toggle="collapse" role="button" data-target="#collapse-1-1" aria-expanded="false" aria-controls="collapse-1-1">
-                                    <h6 class="mb-0"><span class="ti-receipt mr-3"></span> Which license do I need?</h6>
+                                    <h6 class="mb-0"><span class="ti-receipt mr-3"></span>É PDF?</h6>
                                 </div>
                                 <div id="collapse-1-1" class="collapse" aria-labelledby="heading-1-1" data-parent="#accordion-1">
                                     <div class="card-body">
-                                        <p>Uniquely leverage other's distinctive infomediaries rather than leveraged supply chains. Continually seize distributed collaboration and idea-sharing whereas user.</p>
+                                        <p>NÃO. É uma página web como um site para compartilhar basta enviar o link do seu cartão e a pessoa irá abri-lo pelo navegador do celular.</p>
                                     </div>
                                 </div>
                             </div>
@@ -534,7 +478,7 @@
         <!--our pricing packages section end-->
 
 
-        <section id="about" class="about-us ptb-100 gray-light-bg">
+        <section id="about" class="about-us ptb-100 primary-bg">
             <div class="container">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-lg-5">
@@ -567,7 +511,7 @@
 
 
         <!--contact us section start-->
-        <section id="contact" class="contact-us gray-light-bg ptb-100">
+        <section id="contact" class="contact-us ptb-100">
             <div class="container">
                 <div class="row">
                     <div class="col-md-5">
@@ -625,16 +569,16 @@
     </div>
     <!--body content wrap end-->
 
-    <!--shape image start-->
+    {{-- <!--shape image start-->
     <div class="shape-img subscribe-wrap">
-        <img src="../../assets/appco/img/footer-top-shape.png" alt="footer shape" class="img-fluid">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-6">
+                    <p class="copyright-text pb-0 mb-0"> Receba  nossas promoções!</p>
                     <form action="#" method="post" class="subscribe-form subscribe-form-footer d-none d-md-block d-lg-block">
                         <div class="d-flex align-items-center">
                             <input type="text" class="form-control input" id="email-footer" name="email"
-                                placeholder="seuemail@gmail.com">
+                            placeholder="seuemail@gmail.com">
                             <input type="submit" class="button btn solid-btn" id="submit-footer" value="Inscrever-se">
                         </div>
                     </form>
@@ -642,19 +586,13 @@
             </div>
         </div>
     </div>
-    <!--shape image end-->
+    <!--shape image end--> --}}
 
     <!--footer section start-->
-    <footer class="footer-section">
-
-        <!--footer top start-->
-        <div class="footer-top pt-150 pb-5 background-img-2">
-
-        </div>
-        <!--footer top end-->
-
+    <footer class="footer-section" style="vertical-align: bottom !important;" >
         <!--footer copyright start-->
-        <div class="footer-bottom gray-light-bg pt-4 pb-4">
+        <img src="../../assets/appco/img/footer-top-shape.png" alt="footer shape" class="img-fluid primary-bg">
+        <div class="footer-bottom pt-4 pb-4 primary-bg">
             <div class="container">
                 <div class="row text-center justify-content-center">
                     <div class="col-md-6 col-lg-5"><p class="copyright-text pb-0 mb-0">Copyrights © 2020. Todos os direitos reservados

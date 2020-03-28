@@ -1,6 +1,15 @@
 <?php
 
+Auth::routes(['verify' => true]);
+
 Route::get('/', 'HomeController');
+
+// Route::get('/teste', function(){
+//     Mail::send('mail.mail', ['teste' => 'Testee'], function($m){
+//         $m->from('robertodiasempresario@gmail.com', 'Roberto');
+//         $m->to('junior07moreno@gmail.com');
+//     });
+// });
 
 Route::get('/card', 'CardController');
 
@@ -10,9 +19,11 @@ Route::post('/login', 'Auth\LoginController@authenticate');
 Route::get('/register', 'Auth\RegisterController@index')->name('register');
 Route::post('/register', 'Auth\RegisterController@register');
 
+Route::get('/forgotPassword', 'Auth\ForgotPasswordController@index')->name('forgot');
+
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::get('/admin', 'AdminController@index')->name('admin.index');
+Route::get('/admin', 'AdminController@index')->name('admin.index')->middleware('verified');
 Route::put('/admin/updateLogo', 'AdminController@updateLogo')->name('admin.updateLogo');
 Route::get('/admin/{id}/{active}/{type}', 'AdminController@updateChecked')->name('admin.updateCkecked');
 Route::post('/admin/updateBackgroundCard', 'AdminController@updateBackgroundCard')->name('link.updateBackgroundCard');

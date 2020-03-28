@@ -26,10 +26,14 @@ class CardController extends Controller
 
     public function card($card)
     {
-        $user = $this->objUser->where('name', $card)->first();
+        $user = $this->objUser->where('username', $card)->first();
         if(isset($user->id)){
-            $links = $this->objUser->find($user->id)->relLinks->sortBy('position');
-            return view('card', ["links" => $links, "user" => $user ]);
+            if($user->expiration_date < date('Y-m-d')){
+                return view('404');
+            }else{
+                $links = $this->objUser->find($user->id)->relLinks->sortBy('position');
+                return view('card', ["links" => $links, "user" => $user ]);
+            }
         }else{
             return view('404');
         }

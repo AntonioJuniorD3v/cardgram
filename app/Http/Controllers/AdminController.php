@@ -23,6 +23,10 @@ class AdminController extends Controller
         $links = $this->objUser->find(auth()->user()->id)->relLinks->sortBy('position');
         $user = $this->objUser->find(auth()->user()->id);
 
+        if($user->expiration_date < date('Y-m-d')){
+            return view('pro');
+        }
+
         foreach($links as $link){
             if($link->type == '#telefone-fixo' || $link->type == '#telefone-celular'){
                 $link->url = str_replace("tel:+55", '', $link->url);
