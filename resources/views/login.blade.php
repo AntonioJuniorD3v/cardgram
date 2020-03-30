@@ -4,17 +4,16 @@
 
 <!--body content wrap start-->
 <div class="main">
-
     <!--hero section start-->
     <section class="hero-section ptb-100 background-img full-screen"
-             style="background: url('../../assets/appco/img/hero-bg-1.jpg')no-repeat center center / cover">
+             style="background: url('../../assets/appco/img/redes-sociais.jpg')no-repeat center center / cover">
         <div class="container">
             <div class="row align-items-center justify-content-between pt-5 pt-sm-5 pt-md-5 pt-lg-0">
                 <div class="col-md-7 col-lg-6">
                     <div class="hero-content-left text-white">
                         <h1 class="text-white">Seja Bem vindo!</h1>
                         <p class="lead">
-                            Keep your face always toward the sunshine - and shadows will fall behind you.
+                            Transforme os seus sonhos em metas.
                         </p>
                     </div>
                 </div>

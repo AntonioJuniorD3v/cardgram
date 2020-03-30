@@ -11,7 +11,7 @@
     <title>CardGram</title>
 
     <link rel="apple-touch-icon" href="../../assets/images/apple-touch-icon.png">
-    <link rel="shortcut icon" href="../../assets/images/favicon.ico">
+    <link rel="shortcut icon" href="../../assets/images/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/css/bootstrap-extend.min.css">
@@ -189,7 +189,7 @@
         <div class="modal-body">
           <p>Você tem certeza que deseja excluir esse link? A exclusão não poderá ser revertida</p>
         </div>
-        <form method="DELETE" class="deleteFormLink" action="http://127.0.0.1:8000/link/delete/5">
+        <form method="DELETE" id="deleteFormLink">
             @csrf
             <input type="text" id="id_delete_link"  name="linkDelete" hidden>
             <div class="modal-footer">

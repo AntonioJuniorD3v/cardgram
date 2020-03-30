@@ -2,21 +2,20 @@
 $('form[name="addFormLink"]').submit(function(event){
     event.preventDefault();
     var formData = new FormData(this);
-    alert('teste');
 
-	$("#overlay").fadeIn(300);
-
+    $("#overlay").fadeIn(300);
     $.ajax({
         url: "http://127.0.0.1:8000/link",
         type: 'POST',
         data: formData,
         success: function () {
-            //window.location.href = "http://127.0.0.1:8000/admin";
-            $('#exampleTabsOne').load(document.URL + ' #exampleTabsOne');
-            updatePreview();
+            window.location.href = "http://127.0.0.1:8000/admin";
+            //$('#exampleTabsOne').load(document.URL + ' #exampleTabsOne');
+            //updatePreview();
         },
         error:function(){
             alert('Ocorreu um erro ao adicionar o link, verifique se os campos estão preenchidos corretamente e tente novamente.');
+            $("#overlay").fadeOut(300);
         },
         cache: false,
         contentType: false,
@@ -38,12 +37,20 @@ $(".isChecked").change(function() {
     }else{
         var isChecked = 0;
     }
+
+    $("#overlay").fadeIn(300);
     $.ajax({
         url:'http://127.0.0.1:8000/link/'+id+'/'+isChecked,
         type:'GET',
         success: function(response){
             updatePreview();
+            $("#overlay").fadeOut(300);
         }
+    }).done(function() {
+        setTimeout(function(){
+            $("#overlay").fadeOut(300);
+            updatePreview();
+        },100);
     });
 });
 
@@ -81,8 +88,7 @@ $(document).ready(function(){
 });
 
 //Delete Link
-$(document).ready(function(){
-    $('.deleteFormLink').submit(function(event){
+    $('#deleteFormLink').submit(function(event){
         event.preventDefault();
         var id = $(this).find('input[name="linkDelete"]').val();
 
@@ -111,7 +117,6 @@ $(document).ready(function(){
                 $("#overlay").fadeOut(300);
             },100);
         });
-    });
 });
 
 //Update checked config user
@@ -307,12 +312,10 @@ $('.clickLink' ).click( function(){
 });
 
 // Select panel create link
-$(document).ready(function(){
-    $('form[name="addFormLink"]').find('div:hidden input').prop('disabled', true);
-    $('form[name="addFormLink"]').find('#link input').prop('disabled', false);
-    $('form[name="addFormLink"]').find('#input-file-now-custom-1').prop('disabled', false);
-
-});
+$('form[name="addFormLink"]').find('input').prop('disabled', true);
+$('form[name="addFormLink"]').find('#link input').prop('disabled', false);
+$('input[name="_token"]').prop('disabled', false);
+$('form[name="addFormLink"]').find('#input-file-now-custom-1').prop('disabled', false);
 
 $('.content').eq(0).show();
 $('#select-page').bind('change', function () {

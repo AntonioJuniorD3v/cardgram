@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +23,7 @@
     <title>Cardgram</title>
 
     <!--favicon icon-->
-    <link rel="icon" href="../../assets/appco/img/favicon.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="../../assets/images/logo.png" type="image/png" sizes="16x16">
 
     <!--google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700%7COpen+Sans&display=swap"

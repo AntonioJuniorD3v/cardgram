@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
 
+html{
+    height: 100%;
+}
+
 body{
   /* background-color: #7259c1 !important; */
   /* background-image: url(https://i.pinimg.com/originals/01/d2/f6/01d2f6d3cdb312ecac38db2443afcef0.jpg); */
   background-size: cover;
   background-position: top;
+  background-attachment: fixed;
 }
 
 #imageLogo {
@@ -50,12 +55,10 @@ body{
 #descricao{
   text-align: center;
   font-size: 16px;
-  margin-top: -8px;
-  /* color: black; */
 }
 
 .link{
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   max-width: 700px;
   text-align: center;
   align-content: center;

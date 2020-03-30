@@ -36,8 +36,10 @@ class PerfilController extends Controller
                     unlink(public_path('media/images/'.$link->image));
                 }
             }
-            
-            unlink(public_path('media/backgrounds_user/'.$user->img_background));
+
+            if($user->background_type != '#gradient'){
+                unlink(public_path('media/backgrounds_user/'.$user->img_background));
+            }
             if($user->img_logo != 'default-logo.png'){
                 unlink(public_path('media/logos/'.$user->img_logo));
             }

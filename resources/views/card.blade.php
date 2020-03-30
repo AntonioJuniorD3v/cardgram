@@ -73,7 +73,50 @@
             background-image: {{$user->color_background}} !important;
 
         }
-    @else($user->background_type == '#cor')
+    @elseif($user->background_type == '#gradient')
+    body{
+        background-attachment: fixed;
+        @switch($user->img_background)
+            @case('c001')
+                    background: linear-gradient(180deg, #00C9FF 0%, #92FE9D 100%);
+            @break
+            @case('c002')
+                background: linear-gradient(180deg, #FC466B 0%, #3F5EFB 100%);
+            @break
+            @case('c003')
+                background: linear-gradient(180deg, #3F2B96 0%, #A8C0FF 100%);
+            @break
+            @case('c004')
+                background: linear-gradient(180deg, #f8ff00 0%, #3ad59f 100%);
+            @break
+            @case('c005')
+                background-image: linear-gradient( 135deg, #FDEB71 10%, #F8D800 100%);
+            @break
+            @case('c006')
+                background-color: #FF9A8B;
+                background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+            @break
+            @case('c007')
+                background-image: linear-gradient( 69.7deg,  rgba(216,81,82,1) 40%, rgba(154,27,69,1) 100.1% );
+            @break
+            @case('c008')
+                background-image: radial-gradient( circle farthest-corner at 50.1% 52.3%,  rgba(255,231,98,1) 58.2%, rgba(251,212,0,1) 90.1% );
+            @break
+            @case('c009')
+                background-image: linear-gradient( 171.8deg,  rgba(5,111,146,1) 13.5%, rgba(6,57,84,1) 78.6% );
+            @break
+            @case('c010')
+                background-image: radial-gradient( circle 753.6px at 10% 20%,  rgba(248,167,221,1) 0%, rgba(230,192,254,1) 41%, rgba(169,217,243,1) 90% );
+            @break
+            @case('c011')
+                background-image: radial-gradient( circle farthest-corner at 0.1% 53.8%,  rgba(255,182,172,1) 0%, rgba(255,123,172,1) 100.2% );
+            @break
+            @case('c012')
+                background-image: radial-gradient( circle farthest-corner at 0.2% 1.8%,  rgba(255,90,8,1) 0%, rgba(88,0,0,1) 100.2% );
+            @break
+        @endswitch
+    }
+    @else
         @php
             $path = substr($user->background_type, '1');
             $img = substr($user->img_background, '1');
@@ -219,7 +262,9 @@
         <div class="row mx-auto" style="place-content: center;">
 
             @foreach ($links as $key => $link)
-                @if ($link->size == 'Grande')
+                @if ($link->active == 0) @php continue; @endphp @endif
+
+                @if ($link->size == 'Grande' || $link->type == '#link')
                     <div class="row align-items-center link  mx-auto col-12 h-100" style="min-height:60px !important; max-width: 100%;" >
                         <a href="{{$link->url}}" data-id="{{$link->id}}" target="_blank"  class="text-decoration-none clickLink h-100" >
                             <div class="row h-100" >
@@ -269,58 +314,62 @@
                                         <p class="texto-estilo m-0">{{$link->name}}</p>
                                     </div>
                                 @else
-                                    <div class="col-1 d-flex align-items-center p-0">
-                                        @if (isset($link->image))
+                                    @if (isset($link->image))
+                                        <div class="col-2 d-flex align-items-center p-0">
                                             <img src="{{url("media/images/$link->image")}}" width="40">
-                                        @endif
-                                    </div>
-                                        <div class="col-11 d-flex align-items-center p-0" style="place-content:center; margin: 10px -5px 10px 5px;">
+                                        </div>
+                                        <div class="col-10 d-flex align-items-center p-0" style="place-content:center;">
                                             <p class="texto-estilo m-0">{{$link->name}}</p>
                                         </div>
+                                    @else
+                                        <div class="col-12 d-flex align-items-center p-0" style="place-content:center; margin: 10px -5px 10px 5px;">
+                                            <p class="texto-estilo m-0">{{$link->name}}</p>
+                                        </div>
+                                    @endif
                                 @endif
                             </div>
                         </a>
                     </div>
                 @endif
 
-                @if ($link->size == 'Pequeno')
+                @if ($link->size == 'Pequeno' && $link->type != '#link')
                     <div class="row align-items-center link mx-auto button-small" >
                         <a href="{{$link->url}}" target="_blank" data-id="{{$link->id}}" style="margin:10px !important;" class=" text-decoration-none clickLink" >
                             @switch($link->type)
-                                                @case('#telefone-celular')
-                                                    <i class="fas fa-mobile-alt fa-2x"></i>
-                                                @break
-                                                @case('#telefone-fixo')
-                                                    <i class="fas fa-phone fa-2x"></i>
-                                                @break
-                                                @case('#e-mail')
-                                                    <i class="fas fa-envelope fa-2x"></i>
-                                                @break
-                                                @case('#website')
-                                                    <i class="fas fa-mouse-pointer fa-2x"></i>
-                                                @break
-                                                @case('#endereco')
-                                                    <i class="fas fa-map-marker-alt fa-2x"></i>
-                                                @break
-                                                @case('#whatsapp')
-                                                    <i class="fab fa-whatsapp fa-2x"></i>
-                                                @break
-                                                @case('#facebook')
-                                                    <i class="fab fa-facebook-f fa-2x"></i>
-                                                @break
-                                                @case('#youtube')
-                                                    <i class="fab fa-youtube fa-2x"></i>
-                                                @break
-                                                @case('#instagram')
-                                                    <i class="fab fa-instagram fa-2x"></i>
-                                                @break
-                                                @case('#twitter')
-                                                    <i class="fab fa-twitter fa-2x"></i>
-                                                @break
-                                                @case('#linkedin')
-                                                    <i class="fab fa-linkedin-in fa-2x"></i>
-                                                @break
-                                            @endswitch
+                                @case('#telefone-celular')
+                                    <i class="fas fa-mobile-alt fa-2x"></i>
+                                @break
+                                @case('#telefone-fixo')
+                                    <i class="fas fa-phone fa-2x"></i>
+                                @break
+                                @case('#e-mail')
+                                    <i class="fas fa-envelope fa-2x"></i>
+                                @break
+                                @case('#website')
+                                    <i class="fas fa-mouse-pointer fa-2x"></i>
+                                @break
+                                @case('#endereco')
+                                    <i class="fas fa-map-marker-alt fa-2x"></i>
+                                @break
+                                @case('#whatsapp')
+                                    <i class="fab fa-whatsapp fa-2x"></i>
+                                @break
+                                @case('#facebook')
+                                    <i class="fab fa-facebook-f fa-2x"></i>
+                                @break
+                                @case('#youtube')
+                                    <i class="fab fa-youtube fa-2x"></i>
+                                @break
+                                @case('#instagram')
+                                    <i class="fab fa-instagram fa-2x"></i>
+                                @break
+                                @case('#twitter')
+                                    <i class="fab fa-twitter fa-2x"></i>
+                                @break
+                                @case('#linkedin')
+                                    <i class="fab fa-linkedin-in fa-2x"></i>
+                                @break
+                             @endswitch
                         </a>
                     </div>
                 @endif
