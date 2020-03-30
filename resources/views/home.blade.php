@@ -80,7 +80,7 @@
                     </div>
                     <div class="col-md-6 col-lg-5">
                         <div class="hero-animation-img">
-                            <img class="img-fluid d-block m-auto animation-one" src="https://www.cartaointerativo.com.br/img/big_thumb_home.png"
+                            <img class="img-fluid d-block m-auto animation-one" src="../../assets/appco/img/cartao-interativo.png"
                                 width="150" alt="animation image" id="imgTop">
                             {{-- <img class="img-fluid d-none d-lg-block animation-two"
                                 src="../../assets/appco/img/instagramlike.png" style="bottom:100px !important;" alt="animation image" width="120"> --}}
@@ -91,7 +91,7 @@
                 </div>
             </div>
             <div class="bottom-img-absolute">
-                <img src="../../assets/appco/img/hero-bg-shape-1.svg" alt="wave shape" class="img-fluid">
+                <img src="../../assets/appco/img/shapes/hero-bg-shape-1.svg" alt="wave shape" class="img-fluid">
             </div>
         </section>
 
@@ -153,7 +153,7 @@
                         <div class="col-lg-4">
                             <div class="position-relative">
                                 <img id="tree" alt="Image placeholder" src="../../assets/appco/img/tree.png" class="img-center img-fluid">
-                                <img alt="Image placeholder" src="https://www.cartaointerativo.com.br/img/big_thumb_home.png" class="img-center img-fluid">
+                                <img alt="Image placeholder" src="../../assets/appco/img/cartao-interativo.png" class="img-center img-fluid">
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -214,12 +214,12 @@
                 <div class="screen-slider-content mt-5">
                     <div class="screenshot-frame"></div>
                     <div class="screen-carousel owl-carousel owl-theme dot-indicator">
-                        <img src="../../assets/appco/img/teste.png" class="img-fluid" alt="screenshots">
-                        <img src="../../assets/appco/img/teste.png" class="img-fluid" alt="screenshots">
-                        <img src="../../assets/appco/img/teste.png" class="img-fluid" alt="screenshots">
-                        <img src="../../assets/appco/img/teste.png" class="img-fluid" alt="screenshots">
-                        <img src="../../assets/appco/img/teste.png" class="img-fluid" alt="screenshots">
-                        <img src="../../assets/appco/img/teste.png" class="img-fluid" alt="screenshots">
+                        <img src="../../assets/appco/img/examples/nutricionista.png" class="img-fluid" alt="screenshots">
+                        <img src="../../assets/appco/img/examples/burger.png" class="img-fluid" alt="screenshots">
+                        <img src="../../assets/appco/img/examples/advogado.png" class="img-fluid" alt="screenshots">
+                        <img src="../../assets/appco/img/examples/mulher.png" class="img-fluid" alt="screenshots">
+                        <img src="../../assets/appco/img/examples/uber.png" class="img-fluid" alt="screenshots">
+                        <img src="../../assets/appco/img/examples/dj.png" class="img-fluid" alt="screenshots">
                     </div>
                 </div>
                 <!--end app screen carousel-->
@@ -502,7 +502,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="about-content-right">
-                            <img src="https://expressonacional.com/wp-content/uploads/2018/07/garantia-de-7-dias.png" width="500" alt="about us" class="img-fluid">
+                            <img src="../../assets/appco/img/garantia-de-7-dias.png" width="500" alt="about us" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -569,29 +569,10 @@
     </div>
     <!--body content wrap end-->
 
-    {{-- <!--shape image start-->
-    <div class="shape-img subscribe-wrap">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <p class="copyright-text pb-0 mb-0"> Receba  nossas promoções!</p>
-                    <form action="#" method="post" class="subscribe-form subscribe-form-footer d-none d-md-block d-lg-block">
-                        <div class="d-flex align-items-center">
-                            <input type="text" class="form-control input" id="email-footer" name="email"
-                            placeholder="seuemail@gmail.com">
-                            <input type="submit" class="button btn solid-btn" id="submit-footer" value="Inscrever-se">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--shape image end--> --}}
-
     <!--footer section start-->
     <footer class="footer-section" style="vertical-align: bottom !important;" >
         <!--footer copyright start-->
-        <img src="../../assets/appco/img/footer-top-shape.png" alt="footer shape" class="img-fluid primary-bg">
+        <img src="../../assets/appco/img/shapes/footer-top-shape.png" alt="footer shape" class="img-fluid primary-bg">
         <div class="footer-bottom pt-4 pb-4 primary-bg">
             <div class="container">
                 <div class="row text-center justify-content-center">

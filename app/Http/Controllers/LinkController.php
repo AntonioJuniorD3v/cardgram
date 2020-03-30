@@ -83,7 +83,7 @@ class LinkController extends Controller
             $request->name = 'video';
         }
 
-        $imageName = null;
+        //$imageName = null;
         if(!empty($request->img)){
             $request->validate([
                 'img' => 'required|image|mimes:jpeg,jpg,png|max:1024'
@@ -91,18 +91,29 @@ class LinkController extends Controller
             $ext = $request->img->extension();
             $imageName = 'imgbtn'.$id.'.'.$ext;
             $request->img->move(public_path('media/images'), $imageName);
+
+            return
+            $this->objLink
+                ->where(['id'=>$id])
+                ->where(['id_user'=>auth()->user()->id])
+                ->update([
+                    'size'=>$request->size,
+                    'name'=>$request->name,
+                    'url'=>$request->url,
+                    'image'=>$imageName
+                ]);
+        }else{
+            return
+            $this->objLink
+                ->where(['id'=>$id])
+                ->where(['id_user'=>auth()->user()->id])
+                ->update([
+                    'size'=>$request->size,
+                    'name'=>$request->name,
+                    'url'=>$request->url,
+                ]);
         }
 
-        return
-        $this->objLink
-            ->where(['id'=>$id])
-            ->where(['id_user'=>auth()->user()->id])
-            ->update([
-                'size'=>$request->size,
-                'name'=>$request->name,
-                'url'=>$request->url,
-                'image'=>$imageName
-            ]);
     }
 
     public function destroy(Request $request, $id){

@@ -335,6 +335,9 @@
                 @if ($link->size == 'Pequeno' && $link->type != '#link')
                     <div class="row align-items-center link mx-auto button-small" >
                         <a href="{{$link->url}}" target="_blank" data-id="{{$link->id}}" style="margin:10px !important;" class=" text-decoration-none clickLink" >
+                            @if (isset($link->image))
+                                <img src="{{url("media/images/$link->image")}}" width="40">
+                            @else
                             @switch($link->type)
                                 @case('#telefone-celular')
                                     <i class="fas fa-mobile-alt fa-2x"></i>
@@ -370,6 +373,7 @@
                                     <i class="fab fa-linkedin-in fa-2x"></i>
                                 @break
                              @endswitch
+                             @endif
                         </a>
                     </div>
                 @endif

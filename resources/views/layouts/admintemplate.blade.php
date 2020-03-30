@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js css-menubar" lang="en">
+<html class="no-js css-menubar" lang="pt-BR">
 
 <head>
     <meta charset="utf-8">
@@ -85,6 +85,9 @@
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/vendor/colorPicker/dist/css/asColorPicker.css">
     <link rel="stylesheet" href="../../assets/vendor/fontselect-jquery/styles/fontselect-default.css">
+    <link rel="stylesheet" href="../../assets/vendor/nestable/nestable.css">
+    <link rel="stylesheet" href="../../assets/vendor/tasklist/tasklist.css">
+    <link rel="stylesheet" href="../../assets/vendor/sortable/sortable.css">
     @if(isset($user))
         <link href='https://fonts.googleapis.com/css?family={{$user->font_shape}}' rel='stylesheet' type='text/css'>
     @endif
@@ -109,10 +112,6 @@
     <script src="../../assets/vendor/colorPicker/js/jquery-asGradient.js"></script>
     <script src="../../assets/vendor/colorPicker/dist/jquery-asColorPicker.js"></script>
     <script src="../../assets/vendor/fontselect-jquery/jquery.fontselect.js"></script>
-
-    <link rel="stylesheet" href="../../assets/vendor/nestable/nestable.css">
-    <link rel="stylesheet" href="../../assets/vendor/tasklist/tasklist.css">
-    <link rel="stylesheet" href="../../assets/vendor/sortable/sortable.css">
 </head>
 
 <body class="animsition dashboard" id="seloko">
@@ -123,7 +122,7 @@
         </div>
     </div>
 
-  <!--[if lt IE 8]>
+    <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
@@ -171,341 +170,300 @@
       </div>
   </nav>
 
+	@yield('content')
 
-	    @yield('content')
-
-
-  </div>
-      <!-- Modal Excluir link -->
-      <div class="modal fade modal-danger" id="modal_delete_link" aria-hidden="true" aria-labelledby="modal_delete_link" role="dialog" tabindex="-1">
-      <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-          <h4 class="modal-title">Excluir</h4>
-        </div>
-        <div class="modal-body">
-          <p>Você tem certeza que deseja excluir esse link? A exclusão não poderá ser revertida</p>
-        </div>
-        <form method="DELETE" id="deleteFormLink">
-            @csrf
-            <input type="text" id="id_delete_link"  name="linkDelete" hidden>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-pure" data-dismiss="modal">Não</button>
-                <button type="submit" class="btn btn-success">
-                    Sim
+    <!-- Modal Excluir link -->
+    <div class="modal fade modal-danger" id="modal_delete_link" aria-hidden="true" aria-labelledby="modal_delete_link" role="dialog" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
                 </button>
+                <h4 class="modal-title">Excluir</h4>
+                </div>
+                <div class="modal-body">
+                <p>Você tem certeza que deseja excluir esse link? A exclusão não poderá ser revertida</p>
+                </div>
+                <form method="DELETE" id="deleteFormLink">
+                    @csrf
+                    <input type="text" id="id_delete_link"  name="linkDelete" hidden>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-pure" data-dismiss="modal">Não</button>
+                        <button type="submit" class="btn btn-success">
+                            Sim
+                        </button>
+                    </div>
+                </form>
             </div>
-        </form>
-      </div>
-    </div>
+        </div>
     </div>
     <!-- End Modal -->
 
     <!-- Modal Deletar conta -->
     <div class="modal fade modal-danger" id="modal_delete_account" aria-hidden="true" aria-labelledby="modal_delete_link" role="dialog" tabindex="-1">
         <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-            <h4 class="modal-title">Atenção</h4>
-          </div>
-          <div class="modal-body">
-            <p>Você tem certeza que deseja excluir essa conta? A exclusão irá exluir todos os seus dados e não poderá ser revertida</p>
-          </div>
-          <form method="POST" action="http://127.0.0.1:8000/perfil/delete">
-            @csrf
-            <input type="text" id="id_delete_link" value="{{auth()->user()->id}}"  name="id" hidden>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-pure" data-dismiss="modal">Não</button>
-                <button type="submit" class="btn btn-success">
-                    Sim
-                </button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title">Atenção</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Você tem certeza que deseja excluir essa conta? A exclusão irá exluir todos os seus dados e não poderá ser revertida</p>
+                </div>
+                <form method="POST" action="http://127.0.0.1:8000/perfil/delete">
+                    @csrf
+                    <input type="text" id="id_delete_link" value="{{auth()->user()->id}}"  name="id" hidden>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-pure" data-dismiss="modal">Não</button>
+                        <button type="submit" class="btn btn-success">
+                            Sim
+                        </button>
+                    </div>
+                </form>
             </div>
-          </form>
         </div>
-      </div>
-      </div>
-      <!-- End Modal -->
+    </div>
+    <!-- End Modal -->
 
 
-  <script>
-    $("#sortable").sortable({
-        handle: '.handle',
-        tolerance: 'pointer',
-        revert: 'invalid',
-        placeholder: 'span2 well placeholder tile',
-      update: function(){
-        var list = $('#sortable').sortable("toArray");
-        console.log(JSON.stringify(list));
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    <script>
+        $("#sortable").sortable({
+            handle: '.handle',
+            tolerance: 'pointer',
+            revert: 'invalid',
+            placeholder: 'span2 well placeholder tile',
+            update: function(){
+                var list = $('#sortable').sortable("toArray");
+
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    type:'POST',
+                    url:"http://127.0.0.1:8000/link/position",
+                    data: {list: list},
+                    dataType: 'JSON',
+                    success:function(data){
+                        updatePreview();
+                    },
+                    error:function(){
+                        //alert('Erro');
+                    },
+                }).done(function(msg){
+                    updatePreview();
+                });
+                updatePreview();
             }
         });
-        $.ajax({
-            type:'POST',
-            url:"http://127.0.0.1:8000/link/position",
-            data: {list: list},
-            dataType: 'JSON',
-            success:function(data){
-                updatePreview();
-            },
-            error:function(){
-                //alert('Erro');
-            },
-        }).done(function(msg){
-            updatePreview();
-        });
-        // updatePreview();
-
-        //$.post("http://127.0.0.1:8000/link/position", {_token:{{csrf_token() }} , list:list});
-      }
-    });
-
-    //Update Preview
-    function updatePreview(){
-        $("#previewPhone").fadeIn(300);
-        $('#divPhone').load(document.URL + ' #divPhone', function(){
-            $("#previewPhone").fadeOut(300);
-        });
-    }
-  </script>
-
-
-<script>
-    $( ".sortable" ).sortable({ handle: '.handle' });
-</script>
-
-  <!-- Core  -->
-  <script src="../../assets/vendor/babel-external-helpers/babel-external-helpers.js"></script>
-  <script src="../../assets/vendor/popper-js/umd/popper.min.js"></script>
-  <script src="../../assets/vendor/bootstrap/bootstrap.js"></script>
-  <script src="../../assets/vendor/animsition/animsition.js"></script>
-  <script src="../../assets/vendor/mousewheel/jquery.mousewheel.js"></script>
-  <script src="../../assets/vendor/asscrollbar/jquery-asScrollbar.js"></script>
-  <script src="../../assets/vendor/asscrollable/jquery-asScrollable.js"></script>
-  <script src="../../assets/vendor/waves/waves.js"></script>
-  <!-- Plugins -->
-  <script src="../../assets/vendor/switchery/switchery.js"></script>
-  <script src="../../assets/vendor/intro-js/intro.js"></script>
-  <script src="../../assets/vendor/screenfull/screenfull.js"></script>
-  <script src="../../assets/vendor/slidepanel/jquery-slidePanel.js"></script>
-  <script src="../../assets/vendor/chartist/chartist.min.js"></script>
-  <script src="../../assets/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.js"></script>
-  <script src="../../assets/vendor/jvectormap/jquery-jvectormap.min.js"></script>
-  <script src="../../assets/vendor/jvectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
-  <script src="../../assets/vendor/matchheight/jquery.matchHeight-min.js"></script>
-  <script src="../../assets/vendor/peity/jquery.peity.min.js"></script>
-  <script src="../../assets/vendor/owl-carousel/owl.carousel.js"></script>
-  <script src="../../assets/vendor/slick-carousel/slick.js"></script>
-  <script src="../../assets/vendor/toastr/toastr.js"></script>
-  <script src="../../assets/vendor/webui-popover/jquery.webui-popover.min.js"></script>
-  <script src="../../assets/vendor/toolbar/jquery.toolbar.js"></script>
-  <script src="../../assets/vendor/jquery-ui/jquery-ui.js"></script>
-  <script src="../../assets/vendor/blueimp-tmpl/tmpl.js"></script>
-  <script src="../../assets/vendor/blueimp-canvas-to-blob/canvas-to-blob.js"></script>
-  <script src="../../assets/vendor/blueimp-load-image/load-image.all.min.js"></script>
-  <script src="../../assets/vendor/blueimp-file-upload/jquery.fileupload.js"></script>
-  <script src="../../assets/vendor/blueimp-file-upload/jquery.fileupload-process.js"></script>
-  <script src="../../assets/vendor/blueimp-file-upload/jquery.fileupload-image.js"></script>
-  <script src="../../assets/vendor/blueimp-file-upload/jquery.fileupload-audio.js"></script>
-  <script src="../../assets/vendor/blueimp-file-upload/jquery.fileupload-video.js"></script>
-  <script src="../../assets/vendor/blueimp-file-upload/jquery.fileupload-validate.js"></script>
-  <script src="../../assets/vendor/blueimp-file-upload/jquery.fileupload-ui.js"></script>
-  <script src="../../assets/vendor/dropify/dropify.min.js"></script>
-  <script src="../../assets/vendor/select2/select2.full.min.js"></script>
-  <script src="../../assets/vendor/bootstrap-tokenfield/bootstrap-tokenfield.min.js"></script>
-  <script src="../../assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
-  <script src="../../assets/vendor/bootstrap-select/bootstrap-select.js"></script>
-  <script src="../../assets/vendor/icheck/icheck.min.js"></script>
-  <script src="../../assets/vendor/switchery/switchery.js"></script>
-  <script src="../../assets/vendor/asrange/jquery-asRange.min.js"></script>
-  <script src="../../assets/vendor/ionrangeslider/ion.rangeSlider.min.js"></script>
-  <script src="../../assets/vendor/asspinner/jquery-asSpinner.min.js"></script>
-  <script src="../../assets/vendor/clockpicker/bootstrap-clockpicker.min.js"></script>
-  <script src="../../assets/vendor/ascolor/jquery-asColor.min.js"></script>
-  <script src="../../assets/vendor/asgradient/jquery-asGradient.min.js"></script>
-  <script src="../../assets/vendor/ascolorpicker/jquery-asColorPicker.min.js"></script>
-  <script src="../../assets/vendor/bootstrap-maxlength/bootstrap-maxlength.js"></script>
-  <script src="../../assets/vendor/jquery-knob/jquery.knob.js"></script>
-  <script src="../../assets/vendor/bootstrap-touchspin/bootstrap-touchspin.min.js"></script>
-  <script src="../../assets/vendor/jquery-labelauty/jquery-labelauty.js"></script>
-  <script src="../../assets/vendor/bootstrap-datepicker/bootstrap-datepicker.js"></script>
-  <script src="../../assets/vendor/timepicker/jquery.timepicker.min.js"></script>
-  <script src="../../assets/vendor/datepair/datepair.min.js"></script>
-  <script src="../../assets/vendor/datepair/jquery.datepair.min.js"></script>
-  <script src="../../assets/vendor/jquery-strength/password_strength.js"></script>
-  <script src="../../assets/vendor/jquery-strength/password_strength.js"></script>
-  <script src="../../assets/vendor/jquery-strength/jquery-strength.min.js"></script>
-  <script src="../../assets/vendor/multi-select/jquery.multi-select.js"></script>
-  <script src="../../assets/vendor/typeahead-js/bloodhound.min.js"></script>
-  <script src="../../assets/vendor/typeahead-js/typeahead.jquery.min.js"></script>
-  <script src="../../assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
-  <script src="../../assets/vendor/select2/select2.full.min.js"></script>
-        <script src="../../assets/vendor/bootstrap-tokenfield/bootstrap-tokenfield.min.js"></script>
-        <script src="../../assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
-        <script src="../../assets/vendor/bootstrap-select/bootstrap-select.js"></script>
-        <script src="../../assets/vendor/icheck/icheck.min.js"></script>
-        <script src="../../assets/vendor/switchery/switchery.js"></script>
-        <script src="../../assets/vendor/asrange/jquery-asRange.min.js"></script>
-        <script src="../../assets/vendor/ionrangeslider/ion.rangeSlider.min.js"></script>
-        <script src="../../assets/vendor/asspinner/jquery-asSpinner.min.js"></script>
-        <script src="../../assets/vendor/clockpicker/bootstrap-clockpicker.min.js"></script>
-        <script src="../../assets/vendor/ascolor/jquery-asColor.min.js"></script>
-        <script src="../../assets/vendor/asgradient/jquery-asGradient.min.js"></script>
-        <script src="../../assets/vendor/ascolorpicker/jquery-asColorPicker.min.js"></script>
-        <script src="../../assets/vendor/bootstrap-maxlength/bootstrap-maxlength.js"></script>
-        <script src="../../assets/vendor/jquery-knob/jquery.knob.js"></script>
-        <script src="../../assets/vendor/bootstrap-touchspin/bootstrap-touchspin.min.js"></script>
-        <script src="../../assets/vendor/jquery-labelauty/jquery-labelauty.js"></script>
-        <script src="../../assets/vendor/bootstrap-datepicker/bootstrap-datepicker.js"></script>
-        <script src="../../assets/vendor/timepicker/jquery.timepicker.min.js"></script>
-        <script src="../../assets/vendor/datepair/datepair.min.js"></script>
-        <script src="../../assets/vendor/datepair/jquery.datepair.min.js"></script>
-        <script src="../../assets/vendor/jquery-strength/password_strength.js"></script>
-        <script src="../../assets/vendor/jquery-strength/password_strength.js"></script>
-        <script src="../../assets/vendor/jquery-strength/jquery-strength.min.js"></script>
-        <script src="../../assets/vendor/multi-select/jquery.multi-select.js"></script>
-        <script src="../../assets/vendor/typeahead-js/bloodhound.min.js"></script>
-        <script src="../../assets/vendor/typeahead-js/typeahead.jquery.min.js"></script>
-        <script src="../../assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
-        <script src="../../assets/vendor/formatter/jquery.formatter.js"></script>
-
-  <!-- Scripts -->
-  <script src="../../assets/js/Component.js"></script>
-  <script src="../../assets/js/Plugin.js"></script>
-  <script src="../../assets/js/Base.js"></script>
-  <script src="../../assets/js/Config.js"></script>
-
-  <script src="../../assets/js/Section/Menubar.js"></script>
-  <script src="../../assets/js/Section/Sidebar.js"></script>
-  <script src="../../assets/js/Section/PageAside.js"></script>
-  <script src="../../assets/js/Plugin/menu.js"></script>
-
-  <!-- Config -->
-  <script src="../../assets/js/config/colors.js"></script>
-  <script src="../../assets/js/config/tour.js"></script>
-  <script>Config.set('assets', '../../assets');</script>
-
-  <!-- Page -->
-  <script src="../../assets/js/Site.js"></script>
-  <script src="../../assets/js/Plugin/asscrollable.js"></script>
-  <script src="../../assets/js/Plugin/slidepanel.js"></script>
-  <script src="../../assets/js/Plugin/switchery.js"></script>
-  <script src="../../assets/js/Plugin/matchheight.js"></script>
-  <script src="../../assets/js/Plugin/jvectormap.js"></script>
-  <script src="../../assets/js/Plugin/peity.js"></script>
-
-  <script src="../../assets/examples/js/dashboard/v1.js"></script>
-  <script src="../../assets/js/Plugin/owl-carousel.js"></script>
-
-  <script src="../../assets/examples/js/uikit/carousel.js"></script>
-  <script src="../../assets/js/script.js"></script>
-  <script src="../../assets/js/Plugin/toastr.js"></script>
-  <script src="../../assets/js/Plugin/webui-popover.js"></script>
-  <script src="../../assets/js/Plugin/toolbar.js"></script>
-  <script src="../../assets/examples/js/uikit/tooltip-popover.js"></script>
-  <script src="../../assets/examples/js/forms/uploads.js"></script>
-  <script src="../../assets/js/Plugin/select2.js"></script>
-  <script src="../../assets/js/Plugin/asrange.js"></script>
-  <script src="../../assets/bootstrap-select/bootstrap-select.js"></script>
-  <script src="../../assets/js/Plugin/bootstrap-select.js"></script>
-  <script src="../../assets/examples/js/uikit/icon.js"></script>
-        <script src="../../assets/js/Plugin/select2.js"></script>
-        <script src="../../assets/js/Plugin/bootstrap-tokenfield.js"></script>
-        <script src="../../assets/js/Plugin/bootstrap-tagsinput.js"></script>
-        <script src="../../assets/js/Plugin/bootstrap-select.js"></script>
-        <script src="../../assets/js/Plugin/icheck.js"></script>
-        <script src="../../assets/js/Plugin/switchery.js"></script>
-        <script src="../../assets/js/Plugin/asrange.js"></script>
-        <script src="../../assets/js/Plugin/formatter.js"></script>
-        <script src="../../assets/vendor/sortable/Sortable.js"></script>
-        <script src="../../assets/vendor/nestable/jquery.nestable.js"></script>
-        <script src="../../assets/js/Plugin/sortable.js"></script>
-        <script src="../../assets/js/Plugin/nestable.js"></script>
-        <script src="../../assets/js/Plugin/tasklist.js"></script>
-
-        {{-- Spinner Button --}}
-        <script src="../../assets/vendor/ladda/spin.min.js"></script>
-        <script src="../../assets/vendor/ladda/ladda.min.js"></script>
-        <script src="../../assets/js/Plugin/loading-button.js"></script>
-        <script src="../../assets/js/Plugin/more-button.js"></script>
-        <script src="../../assets/js/Plugin/ladda.js"></script>
-
-
-        <script src="../../assets/vendor/sortable/Sortable.js"></script>
-        <script src="../../assets/vendor/nestable/jquery.nestable.js"></script>
-        <script src="../../assets/js/Plugin/sortable.js"></script>
-        <script src="../../assets/js/Plugin/nestable.js"></script>
-        <script src="../../assets/js/Plugin/tasklist.js"></script>
-<!--
-<script>
-    var drEvent = $('#input-file-now-custom-1').dropify();
-
-    drEvent.on('dropify.error.fileSize', function(event, element){
-        alert('A imagem deve ser menor que 1MB');
-    });
-    drEvent.on('dropify.error.imageFormat', function(event, element){
-        alert('A imagem deve ser no formato PNG, JPG ou JPEG');
-    });
-</script>
-
-<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-
-<script src="../../assets/vendor/emoji/lib/js/config.js"></script>
-<script src="../../assets/vendor/emoji/lib/js/util.js"></script>
-<script src="../../assets/vendor/emoji/lib/js/jquery.emojiarea.js"></script>
-<script src="../../assets/vendor/emoji/lib/js/emoji-picker.js"></script>
-
-<script>
-  $(function() {
-    window.emojiPicker = new EmojiPicker({
-      emojiable_selector: '[data-emojiable=true]',
-      assetsPath: '../../assets/vendor/emoji/lib/img/',
-      popupButtonClasses: 'fa fa-smile-o'
-    });
-    window.emojiPicker.discover();
-  });
-</script> -->
-
-<script>
-  $('#font').fontselect();
-</script>
-
-<script>
-    //Copiar url
-    $( '#btnCopy' ).click( function()
-    {
-        toastr.remove();
-        var clipboardText = "";
-        clipboardText = document.getElementById("urlLink").innerText;
-        copyToClipboard( clipboardText );
-    });
-
-    function copyToClipboard(text) {
-        toastr.success('Link copiado para a área de transferência!');
-        var textArea = document.createElement( "textarea" );
-        textArea.value = text;
-        document.body.appendChild( textArea );
-        textArea.select();
-        try {
-        var successful = document.execCommand( 'copy' );
-        var msg = successful ? 'successful' : 'unsuccessful';
-            //console.log('Copying text command was ' + msg);
-        } catch (err) {
-        //console.log('Oops, unable to copy');
+        //Update Preview
+        function updatePreview(){
+            $("#previewPhone").fadeIn(300);
+            $('#divPhone').load(document.URL + ' #divPhone', function(){
+                $("#previewPhone").fadeOut(300);
+            });
         }
-        document.body.removeChild( textArea );
-    }
-</script>
+    </script>
+
+    <script>
+        $( ".sortable" ).sortable({ handle: '.handle' });
+    </script>
+
+    <!-- Core  -->
+    <script src="../../assets/vendor/babel-external-helpers/babel-external-helpers.js"></script>
+    <script src="../../assets/vendor/popper-js/umd/popper.min.js"></script>
+    <script src="../../assets/vendor/bootstrap/bootstrap.js"></script>
+    <script src="../../assets/vendor/animsition/animsition.js"></script>
+    <script src="../../assets/vendor/mousewheel/jquery.mousewheel.js"></script>
+    <script src="../../assets/vendor/asscrollbar/jquery-asScrollbar.js"></script>
+    <script src="../../assets/vendor/asscrollable/jquery-asScrollable.js"></script>
+    <script src="../../assets/vendor/waves/waves.js"></script>
+    <!-- Plugins -->
+    <script src="../../assets/vendor/switchery/switchery.js"></script>
+    <script src="../../assets/vendor/intro-js/intro.js"></script>
+    <script src="../../assets/vendor/screenfull/screenfull.js"></script>
+    <script src="../../assets/vendor/slidepanel/jquery-slidePanel.js"></script>
+    <script src="../../assets/vendor/chartist/chartist.min.js"></script>
+    <script src="../../assets/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.js"></script>
+    <script src="../../assets/vendor/jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="../../assets/vendor/jvectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="../../assets/vendor/matchheight/jquery.matchHeight-min.js"></script>
+    <script src="../../assets/vendor/peity/jquery.peity.min.js"></script>
+    <script src="../../assets/vendor/owl-carousel/owl.carousel.js"></script>
+    <script src="../../assets/vendor/slick-carousel/slick.js"></script>
+    <script src="../../assets/vendor/toastr/toastr.js"></script>
+    <script src="../../assets/vendor/webui-popover/jquery.webui-popover.min.js"></script>
+    <script src="../../assets/vendor/toolbar/jquery.toolbar.js"></script>
+    <script src="../../assets/vendor/jquery-ui/jquery-ui.js"></script>
+    <script src="../../assets/vendor/blueimp-tmpl/tmpl.js"></script>
+    <script src="../../assets/vendor/blueimp-canvas-to-blob/canvas-to-blob.js"></script>
+    <script src="../../assets/vendor/blueimp-load-image/load-image.all.min.js"></script>
+    <script src="../../assets/vendor/blueimp-file-upload/jquery.fileupload.js"></script>
+    <script src="../../assets/vendor/blueimp-file-upload/jquery.fileupload-process.js"></script>
+    <script src="../../assets/vendor/blueimp-file-upload/jquery.fileupload-image.js"></script>
+    <script src="../../assets/vendor/blueimp-file-upload/jquery.fileupload-audio.js"></script>
+    <script src="../../assets/vendor/blueimp-file-upload/jquery.fileupload-video.js"></script>
+    <script src="../../assets/vendor/blueimp-file-upload/jquery.fileupload-validate.js"></script>
+    <script src="../../assets/vendor/blueimp-file-upload/jquery.fileupload-ui.js"></script>
+    <script src="../../assets/vendor/dropify/dropify.min.js"></script>
+    <script src="../../assets/vendor/select2/select2.full.min.js"></script>
+    <script src="../../assets/vendor/bootstrap-tokenfield/bootstrap-tokenfield.min.js"></script>
+    <script src="../../assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+    <script src="../../assets/vendor/bootstrap-select/bootstrap-select.js"></script>
+    <script src="../../assets/vendor/icheck/icheck.min.js"></script>
+    <script src="../../assets/vendor/switchery/switchery.js"></script>
+    <script src="../../assets/vendor/asrange/jquery-asRange.min.js"></script>
+    <script src="../../assets/vendor/ionrangeslider/ion.rangeSlider.min.js"></script>
+    <script src="../../assets/vendor/asspinner/jquery-asSpinner.min.js"></script>
+    <script src="../../assets/vendor/clockpicker/bootstrap-clockpicker.min.js"></script>
+    <script src="../../assets/vendor/ascolor/jquery-asColor.min.js"></script>
+    <script src="../../assets/vendor/asgradient/jquery-asGradient.min.js"></script>
+    <script src="../../assets/vendor/ascolorpicker/jquery-asColorPicker.min.js"></script>
+    <script src="../../assets/vendor/bootstrap-maxlength/bootstrap-maxlength.js"></script>
+    <script src="../../assets/vendor/jquery-knob/jquery.knob.js"></script>
+    <script src="../../assets/vendor/bootstrap-touchspin/bootstrap-touchspin.min.js"></script>
+    <script src="../../assets/vendor/jquery-labelauty/jquery-labelauty.js"></script>
+    <script src="../../assets/vendor/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+    <script src="../../assets/vendor/timepicker/jquery.timepicker.min.js"></script>
+    <script src="../../assets/vendor/datepair/datepair.min.js"></script>
+    <script src="../../assets/vendor/datepair/jquery.datepair.min.js"></script>
+    <script src="../../assets/vendor/jquery-strength/password_strength.js"></script>
+    <script src="../../assets/vendor/jquery-strength/password_strength.js"></script>
+    <script src="../../assets/vendor/jquery-strength/jquery-strength.min.js"></script>
+    <script src="../../assets/vendor/multi-select/jquery.multi-select.js"></script>
+    <script src="../../assets/vendor/typeahead-js/bloodhound.min.js"></script>
+    <script src="../../assets/vendor/typeahead-js/typeahead.jquery.min.js"></script>
+    <script src="../../assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+    <script src="../../assets/vendor/select2/select2.full.min.js"></script>
+    <script src="../../assets/vendor/bootstrap-tokenfield/bootstrap-tokenfield.min.js"></script>
+    <script src="../../assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+    <script src="../../assets/vendor/bootstrap-select/bootstrap-select.js"></script>
+    <script src="../../assets/vendor/icheck/icheck.min.js"></script>
+    <script src="../../assets/vendor/switchery/switchery.js"></script>
+    <script src="../../assets/vendor/asrange/jquery-asRange.min.js"></script>
+    <script src="../../assets/vendor/ionrangeslider/ion.rangeSlider.min.js"></script>
+    <script src="../../assets/vendor/asspinner/jquery-asSpinner.min.js"></script>
+    <script src="../../assets/vendor/clockpicker/bootstrap-clockpicker.min.js"></script>
+    <script src="../../assets/vendor/ascolor/jquery-asColor.min.js"></script>
+    <script src="../../assets/vendor/asgradient/jquery-asGradient.min.js"></script>
+    <script src="../../assets/vendor/ascolorpicker/jquery-asColorPicker.min.js"></script>
+    <script src="../../assets/vendor/bootstrap-maxlength/bootstrap-maxlength.js"></script>
+    <script src="../../assets/vendor/jquery-knob/jquery.knob.js"></script>
+    <script src="../../assets/vendor/bootstrap-touchspin/bootstrap-touchspin.min.js"></script>
+    <script src="../../assets/vendor/jquery-labelauty/jquery-labelauty.js"></script>
+    <script src="../../assets/vendor/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+    <script src="../../assets/vendor/timepicker/jquery.timepicker.min.js"></script>
+    <script src="../../assets/vendor/datepair/datepair.min.js"></script>
+    <script src="../../assets/vendor/datepair/jquery.datepair.min.js"></script>
+    <script src="../../assets/vendor/jquery-strength/password_strength.js"></script>
+    <script src="../../assets/vendor/jquery-strength/password_strength.js"></script>
+    <script src="../../assets/vendor/jquery-strength/jquery-strength.min.js"></script>
+    <script src="../../assets/vendor/multi-select/jquery.multi-select.js"></script>
+    <script src="../../assets/vendor/typeahead-js/bloodhound.min.js"></script>
+    <script src="../../assets/vendor/typeahead-js/typeahead.jquery.min.js"></script>
+    <script src="../../assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+    <script src="../../assets/vendor/formatter/jquery.formatter.js"></script>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/Component.js"></script>
+    <script src="../../assets/js/Plugin.js"></script>
+    <script src="../../assets/js/Base.js"></script>
+    <script src="../../assets/js/Config.js"></script>
+    <script src="../../assets/js/Section/Menubar.js"></script>
+    <script src="../../assets/js/Section/Sidebar.js"></script>
+    <script src="../../assets/js/Section/PageAside.js"></script>
+    <script src="../../assets/js/Plugin/menu.js"></script>
+
+    <!-- Config -->
+    <script src="../../assets/js/config/colors.js"></script>
+    <script src="../../assets/js/config/tour.js"></script>
+    <script>Config.set('assets', '../../assets');</script>
+
+    <!-- Page -->
+    <script src="../../assets/js/Site.js"></script>
+    <script src="../../assets/js/Plugin/asscrollable.js"></script>
+    <script src="../../assets/js/Plugin/slidepanel.js"></script>
+    <script src="../../assets/js/Plugin/switchery.js"></script>
+    <script src="../../assets/js/Plugin/matchheight.js"></script>
+    <script src="../../assets/js/Plugin/jvectormap.js"></script>
+    <script src="../../assets/js/Plugin/peity.js"></script>
+    <script src="../../assets/examples/js/dashboard/v1.js"></script>
+    <script src="../../assets/js/Plugin/owl-carousel.js"></script>
+    <script src="../../assets/examples/js/uikit/carousel.js"></script>
+    <script src="../../assets/js/script.js"></script>
+    <script src="../../assets/js/Plugin/toastr.js"></script>
+    <script src="../../assets/js/Plugin/webui-popover.js"></script>
+    <script src="../../assets/js/Plugin/toolbar.js"></script>
+    <script src="../../assets/examples/js/uikit/tooltip-popover.js"></script>
+    <script src="../../assets/examples/js/forms/uploads.js"></script>
+    <script src="../../assets/js/Plugin/select2.js"></script>
+    <script src="../../assets/js/Plugin/asrange.js"></script>
+    <script src="../../assets/bootstrap-select/bootstrap-select.js"></script>
+    <script src="../../assets/js/Plugin/bootstrap-select.js"></script>
+    <script src="../../assets/examples/js/uikit/icon.js"></script>
+    <script src="../../assets/js/Plugin/select2.js"></script>
+    <script src="../../assets/js/Plugin/bootstrap-tokenfield.js"></script>
+    <script src="../../assets/js/Plugin/bootstrap-tagsinput.js"></script>
+    <script src="../../assets/js/Plugin/bootstrap-select.js"></script>
+    <script src="../../assets/js/Plugin/icheck.js"></script>
+    <script src="../../assets/js/Plugin/switchery.js"></script>
+    <script src="../../assets/js/Plugin/asrange.js"></script>
+    <script src="../../assets/js/Plugin/formatter.js"></script>
+    <script src="../../assets/vendor/sortable/Sortable.js"></script>
+    <script src="../../assets/vendor/nestable/jquery.nestable.js"></script>
+    <script src="../../assets/js/Plugin/sortable.js"></script>
+    <script src="../../assets/js/Plugin/nestable.js"></script>
+    <script src="../../assets/js/Plugin/tasklist.js"></script>
+
+    {{-- Spinner Button --}}
+    <script src="../../assets/vendor/ladda/spin.min.js"></script>
+    <script src="../../assets/vendor/ladda/ladda.min.js"></script>
+    <script src="../../assets/js/Plugin/loading-button.js"></script>
+    <script src="../../assets/js/Plugin/more-button.js"></script>
+    <script src="../../assets/js/Plugin/ladda.js"></script>
+
+    <script src="../../assets/vendor/sortable/Sortable.js"></script>
+    <script src="../../assets/vendor/nestable/jquery.nestable.js"></script>
+    <script src="../../assets/js/Plugin/sortable.js"></script>
+    <script src="../../assets/js/Plugin/nestable.js"></script>
+    <script src="../../assets/js/Plugin/tasklist.js"></script>
+
+    <script>
+    $('#font').fontselect();
+    </script>
+
+    <script>
+        //Copiar url
+        $( '#btnCopy' ).click( function()
+        {
+            toastr.remove();
+            var clipboardText = "";
+            clipboardText = document.getElementById("urlLink").innerText;
+            copyToClipboard( clipboardText );
+        });
+
+        function copyToClipboard(text) {
+            toastr.success('Link copiado para a área de transferência!');
+            var textArea = document.createElement( "textarea" );
+            textArea.value = text;
+            document.body.appendChild( textArea );
+            textArea.select();
+            try {
+            var successful = document.execCommand( 'copy' );
+            var msg = successful ? 'successful' : 'unsuccessful';
+                //console.log('Copying text command was ' + msg);
+            } catch (err) {
+            //console.log('Oops, unable to copy');
+            }
+            document.body.removeChild( textArea );
+        }
+    </script>
 
 </body>
-
 </html>
 
 

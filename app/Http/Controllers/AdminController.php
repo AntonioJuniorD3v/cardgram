@@ -112,7 +112,15 @@ class AdminController extends Controller
                     'font_shape' => $request->font,
                     'color_font' => $request->colorFont,
                     'color_name' => $request->colorName
-
+                ]);
+            }else{
+                return $this->objUser->where(['id'=>auth()->user()->id])->update([
+                    'background_type' => $request->ftipo_bt[0],
+                    'button_shape' => $request->inputRadio,
+                    'color_button' => $request->colorButton,
+                    'font_shape' => $request->font,
+                    'color_font' => $request->colorFont,
+                    'color_name' => $request->colorName
                 ]);
             }
         } else if($request->ftipo_bt[0] == "#cor"){

@@ -19,7 +19,7 @@
                         Meu cartão:
                     </div> --}}
                     <div>
-                        <u><a href="http://127.0.0.1:8000/{{$user->username}}" target="_blank" id="urlLink"> http://127.0.0.1:8000/{{$user->username}}</a></u>
+                        <u><a href="http://127.0.0.1:8000/{{$user->username}}" style="color:black;" target="_blank" id="urlLink"> http://127.0.0.1:8000/{{$user->username}}</a></u>
                         <button type="button" id="btnCopy" class="btn btn-round btn-sm waves-effect waves-light waves-round colorSite">
                             <i class="far fa-copy fa-2x"></i>
                         </button>
@@ -830,46 +830,6 @@
                                             <label for="w014">
                                             <div class="imgDiv" >
                                                 <img src={{url("media/backgrounds_gallery/mulheres/014.jpeg")}}>
-                                            </div>
-                                            </label>
-                                        </div>
-
-
-                                        <div class="divGaleria">
-                                            <input type="radio" @if ($user->img_background == 'w015') checked @endif id="w015" class="selectBackground" name="select" data-type='1' value="w015" >
-                                            <label for="w015">
-                                            <div class="imgDiv" >
-                                                <img src={{url("media/backgrounds_gallery/mulheres/015.jpeg")}}>
-                                            </div>
-                                            </label>
-                                        </div>
-
-
-                                        <div class="divGaleria">
-                                            <input type="radio" @if ($user->img_background == 'w016') checked @endif id="w016" class="selectBackground" name="select" data-type='1' value="w016" >
-                                            <label for="w016">
-                                            <div class="imgDiv" >
-                                                <img src={{url("media/backgrounds_gallery/mulheres/016.jpeg")}}>
-                                            </div>
-                                            </label>
-                                        </div>
-
-
-                                        <div class="divGaleria">
-                                            <input type="radio" @if ($user->img_background == 'w017') checked @endif id="w017" class="selectBackground" name="select" data-type='1' value="w017" >
-                                            <label for="w017">
-                                            <div class="imgDiv" >
-                                                <img src={{url("media/backgrounds_gallery/mulheres/017.jpeg")}}>
-                                            </div>
-                                            </label>
-                                        </div>
-
-
-                                        <div class="divGaleria">
-                                            <input type="radio" @if ($user->img_background == 'w018') checked @endif id="w018" class="selectBackground" name="select" data-type='1' value="w018" >
-                                            <label for="w018">
-                                            <div class="imgDiv" >
-                                                <img src={{url("media/backgrounds_gallery/mulheres/018.jpeg")}}>
                                             </div>
                                             </label>
                                         </div>
